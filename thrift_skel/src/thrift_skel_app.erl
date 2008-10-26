@@ -58,6 +58,7 @@ create_tables() ->
 %% Description: Starts apps this depends on, then starts this
 %%--------------------------------------------------------------------
 start_all() ->
+    application:load(thrift),
     [application:start(App) || App <- [sasl, SKEL_SHORTNAME]].
 
 %%--------------------------------------------------------------------

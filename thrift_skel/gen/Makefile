@@ -28,7 +28,7 @@ src:
 	mkdir -p timestamps
 
 $(ESRC)/%_types.erl include/%_types.hrl: $(RPC_DIR)/%.thrift
-	thrift -erl $<
+	thrift -gen erl $<
 	mv gen-erl/*erl src/
 	mv gen-erl/*hrl include/
 	rmdir gen-erl
